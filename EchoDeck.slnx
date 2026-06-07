@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EchoDeck.App/EchoDeck.App.csproj" />
+  <Project Path="EchoDeck.Tests/EchoDeck.Tests.csproj" />
+</Solution>

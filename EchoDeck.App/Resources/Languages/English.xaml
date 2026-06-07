@@ -1,0 +1,224 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FlowDirection x:Key="AppFlowDirection">LeftToRight</FlowDirection>
+
+    <!-- Main Window -->
+    <sys:String x:Key="MainWindow_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">EchoDeck</sys:String>
+    <sys:String x:Key="Search_Placeholder" xmlns:sys="clr-namespace:System;assembly=mscorlib">Search sounds...</sys:String>
+    <sys:String x:Key="Sidebar_AllSounds" xmlns:sys="clr-namespace:System;assembly=mscorlib">All Sounds</sys:String>
+    <sys:String x:Key="Sidebar_Favorites" xmlns:sys="clr-namespace:System;assembly=mscorlib">Favorites</sys:String>
+    <sys:String x:Key="Sidebar_ManageCategories" xmlns:sys="clr-namespace:System;assembly=mscorlib">+ Manage Categories</sys:String>
+    <sys:String x:Key="Sidebar_StopAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">■ Stop All</sys:String>
+    <sys:String x:Key="TopBar_Settings" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings</sys:String>
+    <sys:String x:Key="TopBar_SettingsTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings</sys:String>
+    <sys:String x:Key="TopBar_CategoryTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">Category for new imports</sys:String>
+    <sys:String x:Key="TopBar_Select" xmlns:sys="clr-namespace:System;assembly=mscorlib">Select</sys:String>
+    <sys:String x:Key="TopBar_Import" xmlns:sys="clr-namespace:System;assembly=mscorlib">+ Import</sys:String>
+    <sys:String x:Key="TopBar_ImportTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">Import audio files</sys:String>
+    <sys:String x:Key="TopBar_ImportFolder" xmlns:sys="clr-namespace:System;assembly=mscorlib">+ Folder</sys:String>
+    <sys:String x:Key="TopBar_ImportFolderTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">Import a folder of audio files</sys:String>
+    <sys:String x:Key="TopBar_Cards" xmlns:sys="clr-namespace:System;assembly=mscorlib">Cards</sys:String>
+    <sys:String x:Key="TopBar_List" xmlns:sys="clr-namespace:System;assembly=mscorlib">List</sys:String>
+    <sys:String x:Key="Bulk_Volume" xmlns:sys="clr-namespace:System;assembly=mscorlib">Volume</sys:String>
+    <sys:String x:Key="Bulk_Delete" xmlns:sys="clr-namespace:System;assembly=mscorlib">Delete</sys:String>
+    <sys:String x:Key="Bulk_Cancel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Cancel</sys:String>
+
+    <!-- Context Menu -->
+    <sys:String x:Key="ContextMenu_Play" xmlns:sys="clr-namespace:System;assembly=mscorlib">Play</sys:String>
+    <sys:String x:Key="ContextMenu_ToggleFavorite" xmlns:sys="clr-namespace:System;assembly=mscorlib">Toggle Favorite</sys:String>
+    <sys:String x:Key="ContextMenu_AssignHotkey" xmlns:sys="clr-namespace:System;assembly=mscorlib">Assign Hotkey</sys:String>
+    <sys:String x:Key="ContextMenu_ChangeCategory" xmlns:sys="clr-namespace:System;assembly=mscorlib">Change Category</sys:String>
+    <sys:String x:Key="ContextMenu_OpenFileLocation" xmlns:sys="clr-namespace:System;assembly=mscorlib">Open File Location</sys:String>
+    <sys:String x:Key="ContextMenu_Remove" xmlns:sys="clr-namespace:System;assembly=mscorlib">Remove from Library</sys:String>
+
+    <!-- Empty State -->
+    <sys:String x:Key="Empty_NoSounds" xmlns:sys="clr-namespace:System;assembly=mscorlib">No sounds in library yet</sys:String>
+    <sys:String x:Key="Empty_ImportHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Import audio files or drop them into the window to get started.</sys:String>
+    <sys:String x:Key="Empty_NoMatch" xmlns:sys="clr-namespace:System;assembly=mscorlib">No sounds match the current filter</sys:String>
+    <sys:String x:Key="Empty_TryDifferent" xmlns:sys="clr-namespace:System;assembly=mscorlib">Try a different search, category, or library filter.</sys:String>
+
+    <!-- ListView Headers -->
+    <sys:String x:Key="ListHeader_Name" xmlns:sys="clr-namespace:System;assembly=mscorlib">Name</sys:String>
+    <sys:String x:Key="ListHeader_Category" xmlns:sys="clr-namespace:System;assembly=mscorlib">Category</sys:String>
+    <sys:String x:Key="ListHeader_Hotkey" xmlns:sys="clr-namespace:System;assembly=mscorlib">Hotkey</sys:String>
+    <sys:String x:Key="ListHeader_Duration" xmlns:sys="clr-namespace:System;assembly=mscorlib">Duration</sys:String>
+    <sys:String x:Key="ListHeader_Volume" xmlns:sys="clr-namespace:System;assembly=mscorlib">Vol</sys:String>
+    <sys:String x:Key="ListHeader_Plays" xmlns:sys="clr-namespace:System;assembly=mscorlib">Plays</sys:String>
+    <sys:String x:Key="ListHeader_Fav" xmlns:sys="clr-namespace:System;assembly=mscorlib">Fav</sys:String>
+
+    <!-- Settings Window -->
+    <sys:String x:Key="Settings_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings</sys:String>
+    <sys:String x:Key="Settings_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings</sys:String>
+    <sys:String x:Key="Settings_Save" xmlns:sys="clr-namespace:System;assembly=mscorlib">Save</sys:String>
+
+    <!-- Settings Tabs -->
+    <sys:String x:Key="Tab_Audio" xmlns:sys="clr-namespace:System;assembly=mscorlib">Audio</sys:String>
+    <sys:String x:Key="Tab_Voicemeeter" xmlns:sys="clr-namespace:System;assembly=mscorlib">Voicemeeter</sys:String>
+    <sys:String x:Key="Tab_Hotkeys" xmlns:sys="clr-namespace:System;assembly=mscorlib">Hotkeys</sys:String>
+    <sys:String x:Key="Tab_Library" xmlns:sys="clr-namespace:System;assembly=mscorlib">Library</sys:String>
+    <sys:String x:Key="Tab_Appearance" xmlns:sys="clr-namespace:System;assembly=mscorlib">Appearance</sys:String>
+    <sys:String x:Key="Tab_Advanced" xmlns:sys="clr-namespace:System;assembly=mscorlib">Advanced</sys:String>
+    <sys:String x:Key="Tab_About" xmlns:sys="clr-namespace:System;assembly=mscorlib">About</sys:String>
+
+    <!-- Audio Tab -->
+    <sys:String x:Key="Audio_EnableNormalization" xmlns:sys="clr-namespace:System;assembly=mscorlib">Enable normalization</sys:String>
+    <sys:String x:Key="Audio_AllowOverlap" xmlns:sys="clr-namespace:System;assembly=mscorlib">Allow overlap</sys:String>
+
+    <!-- Voicemeeter Tab -->
+    <sys:String x:Key="VM_Status" xmlns:sys="clr-namespace:System;assembly=mscorlib">Voicemeeter Status</sys:String>
+    <sys:String x:Key="VM_PreferredOutput" xmlns:sys="clr-namespace:System;assembly=mscorlib">Preferred Output:</sys:String>
+    <sys:String x:Key="VM_AutoReconnect" xmlns:sys="clr-namespace:System;assembly=mscorlib">Auto reconnect Voicemeeter</sys:String>
+
+    <!-- Hotkeys Tab -->
+    <sys:String x:Key="Hotkey_StopAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">Stop All Hotkey:</sys:String>
+    <sys:String x:Key="Hotkey_Capture" xmlns:sys="clr-namespace:System;assembly=mscorlib">Capture</sys:String>
+    <sys:String x:Key="Hotkey_AllowOverlap" xmlns:sys="clr-namespace:System;assembly=mscorlib">Allow overlapping playback</sys:String>
+    <sys:String x:Key="Hotkey_PerSoundHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Per-sound hotkeys can be assigned from the main window context menu.</sys:String>
+
+    <!-- Library Tab -->
+    <sys:String x:Key="Library_DefaultCategory" xmlns:sys="clr-namespace:System;assembly=mscorlib">Default category:</sys:String>
+    <sys:String x:Key="Library_WatchedFolders" xmlns:sys="clr-namespace:System;assembly=mscorlib">Watched Folders</sys:String>
+    <sys:String x:Key="Library_Browse" xmlns:sys="clr-namespace:System;assembly=mscorlib">Browse</sys:String>
+    <sys:String x:Key="Library_Add" xmlns:sys="clr-namespace:System;assembly=mscorlib">Add</sys:String>
+    <sys:String x:Key="Library_OpenSelected" xmlns:sys="clr-namespace:System;assembly=mscorlib">Open Selected</sys:String>
+    <sys:String x:Key="Library_CopyPath" xmlns:sys="clr-namespace:System;assembly=mscorlib">Copy Path</sys:String>
+    <sys:String x:Key="Library_Remove" xmlns:sys="clr-namespace:System;assembly=mscorlib">Remove</sys:String>
+    <sys:String x:Key="Library_ScanNow" xmlns:sys="clr-namespace:System;assembly=mscorlib">Scan Now</sys:String>
+    <sys:String x:Key="Library_ClearAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">Clear All</sys:String>
+
+    <!-- Appearance Tab -->
+    <sys:String x:Key="Appearance_Theme" xmlns:sys="clr-namespace:System;assembly=mscorlib">Theme:</sys:String>
+    <sys:String x:Key="Appearance_StartView" xmlns:sys="clr-namespace:System;assembly=mscorlib">Start View:</sys:String>
+    <sys:String x:Key="Appearance_MinimizeToTray" xmlns:sys="clr-namespace:System;assembly=mscorlib">Minimize to tray on close</sys:String>
+    <sys:String x:Key="Appearance_CloseButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Close button:</sys:String>
+    <sys:String x:Key="Appearance_Language" xmlns:sys="clr-namespace:System;assembly=mscorlib">Language:</sys:String>
+
+    <!-- Appearance Theme Options -->
+    <sys:String x:Key="ThemeOption_Dark" xmlns:sys="clr-namespace:System;assembly=mscorlib">Dark</sys:String>
+    <sys:String x:Key="ThemeOption_Light" xmlns:sys="clr-namespace:System;assembly=mscorlib">Light</sys:String>
+    <sys:String x:Key="ThemeOption_System" xmlns:sys="clr-namespace:System;assembly=mscorlib">System</sys:String>
+
+    <!-- Appearance Start View Options -->
+    <sys:String x:Key="StartViewOption_Library" xmlns:sys="clr-namespace:System;assembly=mscorlib">Library</sys:String>
+    <sys:String x:Key="StartViewOption_Favorites" xmlns:sys="clr-namespace:System;assembly=mscorlib">Favorites</sys:String>
+    <sys:String x:Key="StartViewOption_Categories" xmlns:sys="clr-namespace:System;assembly=mscorlib">Categories</sys:String>
+
+    <!-- Appearance Close Button Options -->
+    <sys:String x:Key="CloseBehavior_MinimizeToTray" xmlns:sys="clr-namespace:System;assembly=mscorlib">Minimize to Tray</sys:String>
+    <sys:String x:Key="CloseBehavior_Exit" xmlns:sys="clr-namespace:System;assembly=mscorlib">Exit</sys:String>
+
+    <!-- Advanced Tab -->
+    <sys:String x:Key="Advanced_DataAndLogs" xmlns:sys="clr-namespace:System;assembly=mscorlib">Data and Logs</sys:String>
+    <sys:String x:Key="Advanced_OpenLogs" xmlns:sys="clr-namespace:System;assembly=mscorlib">Open logs folder</sys:String>
+    <sys:String x:Key="Advanced_ClearCache" xmlns:sys="clr-namespace:System;assembly=mscorlib">Clear file metadata cache</sys:String>
+    <sys:String x:Key="Advanced_DataFolder" xmlns:sys="clr-namespace:System;assembly=mscorlib">Open data folder</sys:String>
+    <sys:String x:Key="Advanced_Maintenance" xmlns:sys="clr-namespace:System;assembly=mscorlib">Maintenance</sys:String>
+    <sys:String x:Key="Advanced_ResetWarning" xmlns:sys="clr-namespace:System;assembly=mscorlib">Reset all settings to factory defaults. This cannot be undone.</sys:String>
+    <sys:String x:Key="Advanced_ResetButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Reset Settings</sys:String>
+    <sys:String x:Key="Advanced_ExportLibrary" xmlns:sys="clr-namespace:System;assembly=mscorlib">Export library as JSON</sys:String>
+    <sys:String x:Key="Advanced_ExportButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">Export</sys:String>
+
+    <!-- About Tab -->
+    <sys:String x:Key="About_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">EchoDeck</sys:String>
+    <sys:String x:Key="About_Subtitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Native Windows Soundboard</sys:String>
+    <sys:String x:Key="About_Version" xmlns:sys="clr-namespace:System;assembly=mscorlib">Version: 1.0.0</sys:String>
+    <sys:String x:Key="About_Target" xmlns:sys="clr-namespace:System;assembly=mscorlib">Target: Windows 10 / Windows 11</sys:String>
+    <sys:String x:Key="About_Framework" xmlns:sys="clr-namespace:System;assembly=mscorlib">Framework: .NET 10 + WPF</sys:String>
+    <sys:String x:Key="About_Audio" xmlns:sys="clr-namespace:System;assembly=mscorlib">Audio: NAudio</sys:String>
+    <sys:String x:Key="About_Storage" xmlns:sys="clr-namespace:System;assembly=mscorlib">Storage: JSON</sys:String>
+    <sys:String x:Key="About_Desc1" xmlns:sys="clr-namespace:System;assembly=mscorlib">EchoDeck is a focused, fast, stable Windows soundboard.</sys:String>
+    <sys:String x:Key="About_Desc2" xmlns:sys="clr-namespace:System;assembly=mscorlib">Optimized for Voicemeeter users.</sys:String>
+    <sys:String x:Key="About_Desc3" xmlns:sys="clr-namespace:System;assembly=mscorlib">Standard Audio Mode available for users without Voicemeeter.</sys:String>
+
+    <!-- First Run Dialog -->
+    <sys:String x:Key="FirstRun_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Welcome to EchoDeck</sys:String>
+    <sys:String x:Key="FirstRun_Detecting" xmlns:sys="clr-namespace:System;assembly=mscorlib">Detecting audio devices...</sys:String>
+    <sys:String x:Key="FirstRun_PleaseWait" xmlns:sys="clr-namespace:System;assembly=mscorlib">Please wait...</sys:String>
+    <sys:String x:Key="FirstRun_OutputDevice" xmlns:sys="clr-namespace:System;assembly=mscorlib">Output Device:</sys:String>
+    <sys:String x:Key="FirstRun_Microphone" xmlns:sys="clr-namespace:System;assembly=mscorlib">Microphone:</sys:String>
+    <sys:String x:Key="FirstRun_VMHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">You can install Voicemeeter later and switch modes from Settings.</sys:String>
+    <sys:String x:Key="FirstRun_ChangeOutput" xmlns:sys="clr-namespace:System;assembly=mscorlib">Change Output</sys:String>
+    <sys:String x:Key="FirstRun_Continue" xmlns:sys="clr-namespace:System;assembly=mscorlib">Continue</sys:String>
+
+    <!-- Category Manage Dialog -->
+    <sys:String x:Key="Category_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Manage Categories</sys:String>
+    <sys:String x:Key="Category_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">Manage Categories</sys:String>
+    <sys:String x:Key="Category_Add" xmlns:sys="clr-namespace:System;assembly=mscorlib">Add</sys:String>
+    <sys:String x:Key="Category_Rename" xmlns:sys="clr-namespace:System;assembly=mscorlib">Rename</sys:String>
+    <sys:String x:Key="Category_MoveUp" xmlns:sys="clr-namespace:System;assembly=mscorlib">Move Up</sys:String>
+    <sys:String x:Key="Category_MoveDown" xmlns:sys="clr-namespace:System;assembly=mscorlib">Move Down</sys:String>
+    <sys:String x:Key="Category_Delete" xmlns:sys="clr-namespace:System;assembly=mscorlib">Delete</sys:String>
+    <sys:String x:Key="Category_Close" xmlns:sys="clr-namespace:System;assembly=mscorlib">Close</sys:String>
+
+    <!-- Input Dialog -->
+    <sys:String x:Key="Input_OK" xmlns:sys="clr-namespace:System;assembly=mscorlib">OK</sys:String>
+    <sys:String x:Key="Input_Cancel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Cancel</sys:String>
+
+    <!-- Assign Hotkey Dialog -->
+    <sys:String x:Key="AssignHotkey_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">Assign Hotkey</sys:String>
+    <sys:String x:Key="AssignHotkey_Prompt" xmlns:sys="clr-namespace:System;assembly=mscorlib">Press a key combination for this sound...</sys:String>
+    <sys:String x:Key="AssignHotkey_Supported" xmlns:sys="clr-namespace:System;assembly=mscorlib">Supported: F1-F24, Ctrl, Alt, Shift + Key</sys:String>
+
+    <!-- Global / Misc UI -->
+    <sys:String x:Key="Status_Ready" xmlns:sys="clr-namespace:System;assembly=mscorlib">Ready</sys:String>
+    <sys:String x:Key="Status_NothingSelected" xmlns:sys="clr-namespace:System;assembly=mscorlib">Nothing selected</sys:String>
+    <sys:String x:Key="Status_Selected" xmlns:sys="clr-namespace:System;assembly=mscorlib">Selected: {0}</sys:String>
+    <sys:String x:Key="Status_Imported" xmlns:sys="clr-namespace:System;assembly=mscorlib">Imported {0} sound(s)</sys:String>
+    <sys:String x:Key="Status_ImportedWithSkips" xmlns:sys="clr-namespace:System;assembly=mscorlib">Imported {0} sound(s), skipped {1} duplicate(s)</sys:String>
+    <sys:String x:Key="Status_Removed" xmlns:sys="clr-namespace:System;assembly=mscorlib">Sound removed from library</sys:String>
+    <sys:String x:Key="Status_ChooseToPlay" xmlns:sys="clr-namespace:System;assembly=mscorlib">Choose a sound to play</sys:String>
+    <sys:String x:Key="Status_ChooseToPreview" xmlns:sys="clr-namespace:System;assembly=mscorlib">Choose a sound to preview</sys:String>
+    <sys:String x:Key="Status_ShowingAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">Showing all sounds</sys:String>
+    <sys:String x:Key="Status_ShowingFavorites" xmlns:sys="clr-namespace:System;assembly=mscorlib">Showing favorites</sys:String>
+    <sys:String x:Key="Status_ShowingCategory" xmlns:sys="clr-namespace:System;assembly=mscorlib">Showing category: {0}</sys:String>
+    <sys:String x:Key="Status_MarkedFavorite" xmlns:sys="clr-namespace:System;assembly=mscorlib">Marked favorite: {0}</sys:String>
+    <sys:String x:Key="Status_RemovedFavorite" xmlns:sys="clr-namespace:System;assembly=mscorlib">Removed favorite: {0}</sys:String>
+    <sys:String x:Key="Status_HotkeyAssigned" xmlns:sys="clr-namespace:System;assembly=mscorlib">Hotkey {0} assigned to {1}</sys:String>
+    <sys:String x:Key="Status_HotkeyFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">Hotkey {0} could not be registered (conflict or invalid)</sys:String>
+    <sys:String x:Key="Status_FileNotFound" xmlns:sys="clr-namespace:System;assembly=mscorlib">File not found on disk</sys:String>
+    <sys:String x:Key="Status_SettingsSaved" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings saved | Mode: {0}</sys:String>
+
+    <!-- Library Status Text -->
+    <sys:String x:Key="LibraryStatus_Format" xmlns:sys="clr-namespace:System;assembly=mscorlib">{0} sounds · {1} favorites · {2}</sys:String>
+
+    <!-- Additional Hotkey Strings -->
+    <sys:String x:Key="Hotkey_ConflictLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">Conflict:</sys:String>
+    <sys:String x:Key="Hotkey_ConflictWarn" xmlns:sys="clr-namespace:System;assembly=mscorlib">Warn</sys:String>
+    <sys:String x:Key="Hotkey_ConflictOverride" xmlns:sys="clr-namespace:System;assembly=mscorlib">Override</sys:String>
+    <sys:String x:Key="Hotkey_ConflictDisable" xmlns:sys="clr-namespace:System;assembly=mscorlib">Disable duplicate</sys:String>
+    <sys:String x:Key="Hotkey_PerSoundHeader" xmlns:sys="clr-namespace:System;assembly=mscorlib">Per-Sound Hotkeys</sys:String>
+    <sys:String x:Key="Hotkey_RemoveSelected" xmlns:sys="clr-namespace:System;assembly=mscorlib">Remove Selected</sys:String>
+    <sys:String x:Key="Hotkey_ClearAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">Clear All</sys:String>
+    <sys:String x:Key="Hotkey_CountStatus" xmlns:sys="clr-namespace:System;assembly=mscorlib">{0} hotkey(s) assigned</sys:String>
+
+    <!-- Hotkey Dialog / Status -->
+    <sys:String x:Key="Hotkey_Valid" xmlns:sys="clr-namespace:System;assembly=mscorlib">Stop All hotkey is ready.</sys:String>
+    <sys:String x:Key="Hotkey_Invalid" xmlns:sys="clr-namespace:System;assembly=mscorlib">Stop All hotkey is invalid. Keeping the previous valid hotkey.</sys:String>
+    <sys:String x:Key="Hotkey_Conflict" xmlns:sys="clr-namespace:System;assembly=mscorlib">Stop All hotkey conflicts with a sound hotkey. Choose another key.</sys:String>
+    <sys:String x:Key="Hotkey_SetTo" xmlns:sys="clr-namespace:System;assembly=mscorlib">Stop All hotkey set to {0}.</sys:String>
+    <sys:String x:Key="Hotkey_PressKey" xmlns:sys="clr-namespace:System;assembly=mscorlib">Press a key for Stop All...</sys:String>
+
+    <!-- Watched Folders -->
+    <sys:String x:Key="WF_Selected" xmlns:sys="clr-namespace:System;assembly=mscorlib">Selected watched folder: {0}</sys:String>
+    <sys:String x:Key="WF_SelectToRemove" xmlns:sys="clr-namespace:System;assembly=mscorlib">Select a watched folder to remove.</sys:String>
+    <sys:String x:Key="WF_AlreadyEmpty" xmlns:sys="clr-namespace:System;assembly=mscorlib">Watched folders are already empty.</sys:String>
+    <sys:String x:Key="WF_SelectToOpen" xmlns:sys="clr-namespace:System;assembly=mscorlib">Select a watched folder to open.</sys:String>
+    <sys:String x:Key="WF_NoLongerExists" xmlns:sys="clr-namespace:System;assembly=mscorlib">The selected watched folder no longer exists.</sys:String>
+    <sys:String x:Key="WF_Opened" xmlns:sys="clr-namespace:System;assembly=mscorlib">Opened watched folder: {0}</sys:String>
+    <sys:String x:Key="WF_OpenFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">Unable to open the selected watched folder.</sys:String>
+    <sys:String x:Key="WF_SelectToCopy" xmlns:sys="clr-namespace:System;assembly=mscorlib">Select a watched folder to copy.</sys:String>
+    <sys:String x:Key="WF_Copied" xmlns:sys="clr-namespace:System;assembly=mscorlib">Copied watched folder path: {0}</sys:String>
+    <sys:String x:Key="WF_CopyFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">Unable to copy the selected watched folder path.</sys:String>
+    <sys:String x:Key="WF_OpenedLogs" xmlns:sys="clr-namespace:System;assembly=mscorlib">Opened logs folder: {0}</sys:String>
+    <sys:String x:Key="WF_OpenLogsFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">Unable to open logs folder.</sys:String>
+    <sys:String x:Key="WF_CacheCleared" xmlns:sys="clr-namespace:System;assembly=mscorlib">File metadata cache cleared.</sys:String>
+    <sys:String x:Key="WF_CacheClearFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">Unable to clear file metadata cache.</sys:String>
+    <sys:String x:Key="WF_DefaultPathHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">Enter a folder path to watch</sys:String>
+
+    <!-- Reset Settings -->
+    <sys:String x:Key="Reset_ConfirmTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">Reset Settings</sys:String>
+    <sys:String x:Key="Reset_ConfirmMessage" xmlns:sys="clr-namespace:System;assembly=mscorlib">Reset all settings to defaults? This will overwrite your current settings.json.</sys:String>
+    <sys:String x:Key="Reset_Success" xmlns:sys="clr-namespace:System;assembly=mscorlib">Settings reset to defaults.</sys:String>
+
+
+</ResourceDictionary>

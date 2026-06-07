@@ -1,0 +1,224 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FlowDirection x:Key="AppFlowDirection">LeftToRight</FlowDirection>
+
+    <!-- Main Window -->
+    <sys:String x:Key="MainWindow_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">EchoDeck</sys:String>
+    <sys:String x:Key="Search_Placeholder" xmlns:sys="clr-namespace:System;assembly=mscorlib">ابحث عن صوت...</sys:String>
+    <sys:String x:Key="Sidebar_AllSounds" xmlns:sys="clr-namespace:System;assembly=mscorlib">كل الأصوات</sys:String>
+    <sys:String x:Key="Sidebar_Favorites" xmlns:sys="clr-namespace:System;assembly=mscorlib">المفضلة</sys:String>
+    <sys:String x:Key="Sidebar_ManageCategories" xmlns:sys="clr-namespace:System;assembly=mscorlib">+ إدارة التصنيفات</sys:String>
+    <sys:String x:Key="Sidebar_StopAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">■ إيقاف الكل</sys:String>
+    <sys:String x:Key="TopBar_Settings" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعدادات</sys:String>
+    <sys:String x:Key="TopBar_SettingsTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإعدادات</sys:String>
+    <sys:String x:Key="TopBar_CategoryTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">تصنيف الاستيراد الجديد</sys:String>
+    <sys:String x:Key="TopBar_Select" xmlns:sys="clr-namespace:System;assembly=mscorlib">تحديد</sys:String>
+    <sys:String x:Key="TopBar_Import" xmlns:sys="clr-namespace:System;assembly=mscorlib">+ استيراد</sys:String>
+    <sys:String x:Key="TopBar_ImportTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">استيراد ملفات صوتية</sys:String>
+    <sys:String x:Key="TopBar_ImportFolder" xmlns:sys="clr-namespace:System;assembly=mscorlib">+ مجلد</sys:String>
+    <sys:String x:Key="TopBar_ImportFolderTooltip" xmlns:sys="clr-namespace:System;assembly=mscorlib">استيراد مجلد يحتوي ملفات صوتية</sys:String>
+    <sys:String x:Key="TopBar_Cards" xmlns:sys="clr-namespace:System;assembly=mscorlib">بطاقات</sys:String>
+    <sys:String x:Key="TopBar_List" xmlns:sys="clr-namespace:System;assembly=mscorlib">قائمة</sys:String>
+    <sys:String x:Key="Bulk_Volume" xmlns:sys="clr-namespace:System;assembly=mscorlib">الصوت</sys:String>
+    <sys:String x:Key="Bulk_Delete" xmlns:sys="clr-namespace:System;assembly=mscorlib">حذف</sys:String>
+    <sys:String x:Key="Bulk_Cancel" xmlns:sys="clr-namespace:System;assembly=mscorlib">إلغاء</sys:String>
+
+    <!-- Context Menu -->
+    <sys:String x:Key="ContextMenu_Play" xmlns:sys="clr-namespace:System;assembly=mscorlib">تشغيل</sys:String>
+    <sys:String x:Key="ContextMenu_ToggleFavorite" xmlns:sys="clr-namespace:System;assembly=mscorlib">تبديل المفضلة</sys:String>
+    <sys:String x:Key="ContextMenu_AssignHotkey" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعيين اختصار</sys:String>
+    <sys:String x:Key="ContextMenu_ChangeCategory" xmlns:sys="clr-namespace:System;assembly=mscorlib">تغيير التصنيف</sys:String>
+    <sys:String x:Key="ContextMenu_OpenFileLocation" xmlns:sys="clr-namespace:System;assembly=mscorlib">فتح موقع الملف</sys:String>
+    <sys:String x:Key="ContextMenu_Remove" xmlns:sys="clr-namespace:System;assembly=mscorlib">إزالة من المكتبة</sys:String>
+
+    <!-- Empty State -->
+    <sys:String x:Key="Empty_NoSounds" xmlns:sys="clr-namespace:System;assembly=mscorlib">لا توجد أصوات في المكتبة بعد</sys:String>
+    <sys:String x:Key="Empty_ImportHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">قم باستيراد ملفات صوتية أو أسقطها في النافذة للبدء.</sys:String>
+    <sys:String x:Key="Empty_NoMatch" xmlns:sys="clr-namespace:System;assembly=mscorlib">لا توجد أصوات تطابق الفلتر الحالي</sys:String>
+    <sys:String x:Key="Empty_TryDifferent" xmlns:sys="clr-namespace:System;assembly=mscorlib">جرب بحثاً مختلفاً أو تصنيفاً أو فلتراً آخر.</sys:String>
+
+    <!-- ListView Headers -->
+    <sys:String x:Key="ListHeader_Name" xmlns:sys="clr-namespace:System;assembly=mscorlib">الاسم</sys:String>
+    <sys:String x:Key="ListHeader_Category" xmlns:sys="clr-namespace:System;assembly=mscorlib">التصنيف</sys:String>
+    <sys:String x:Key="ListHeader_Hotkey" xmlns:sys="clr-namespace:System;assembly=mscorlib">الاختصار</sys:String>
+    <sys:String x:Key="ListHeader_Duration" xmlns:sys="clr-namespace:System;assembly=mscorlib">المدة</sys:String>
+    <sys:String x:Key="ListHeader_Volume" xmlns:sys="clr-namespace:System;assembly=mscorlib">الصوت</sys:String>
+    <sys:String x:Key="ListHeader_Plays" xmlns:sys="clr-namespace:System;assembly=mscorlib">التشغيل</sys:String>
+    <sys:String x:Key="ListHeader_Fav" xmlns:sys="clr-namespace:System;assembly=mscorlib">مفضلة</sys:String>
+
+    <!-- Settings Window -->
+    <sys:String x:Key="Settings_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإعدادات</sys:String>
+    <sys:String x:Key="Settings_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإعدادات</sys:String>
+    <sys:String x:Key="Settings_Save" xmlns:sys="clr-namespace:System;assembly=mscorlib">حفظ</sys:String>
+
+    <!-- Settings Tabs -->
+    <sys:String x:Key="Tab_Audio" xmlns:sys="clr-namespace:System;assembly=mscorlib">الصوت</sys:String>
+    <sys:String x:Key="Tab_Voicemeeter" xmlns:sys="clr-namespace:System;assembly=mscorlib">Voicemeeter</sys:String>
+    <sys:String x:Key="Tab_Hotkeys" xmlns:sys="clr-namespace:System;assembly=mscorlib">الاختصارات</sys:String>
+    <sys:String x:Key="Tab_Library" xmlns:sys="clr-namespace:System;assembly=mscorlib">المكتبة</sys:String>
+    <sys:String x:Key="Tab_Appearance" xmlns:sys="clr-namespace:System;assembly=mscorlib">المظهر</sys:String>
+    <sys:String x:Key="Tab_Advanced" xmlns:sys="clr-namespace:System;assembly=mscorlib">متقدم</sys:String>
+    <sys:String x:Key="Tab_About" xmlns:sys="clr-namespace:System;assembly=mscorlib">حول</sys:String>
+
+    <!-- Audio Tab -->
+    <sys:String x:Key="Audio_EnableNormalization" xmlns:sys="clr-namespace:System;assembly=mscorlib">تفعيل التسوية</sys:String>
+    <sys:String x:Key="Audio_AllowOverlap" xmlns:sys="clr-namespace:System;assembly=mscorlib">السماح بالتداخل</sys:String>
+
+    <!-- Voicemeeter Tab -->
+    <sys:String x:Key="VM_Status" xmlns:sys="clr-namespace:System;assembly=mscorlib">حالة Voicemeeter</sys:String>
+    <sys:String x:Key="VM_PreferredOutput" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإخراج المفضل:</sys:String>
+    <sys:String x:Key="VM_AutoReconnect" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة الاتصال تلقائياً بـ Voicemeeter</sys:String>
+
+    <!-- Hotkeys Tab -->
+    <sys:String x:Key="Hotkey_StopAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختصار إيقاف الكل:</sys:String>
+    <sys:String x:Key="Hotkey_Capture" xmlns:sys="clr-namespace:System;assembly=mscorlib">التقاط</sys:String>
+    <sys:String x:Key="Hotkey_AllowOverlap" xmlns:sys="clr-namespace:System;assembly=mscorlib">السماح بالتشغيل المتداخل</sys:String>
+    <sys:String x:Key="Hotkey_PerSoundHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">يمكن تعيين اختصارات لكل صوت من قائمة السياق في النافذة الرئيسية.</sys:String>
+
+    <!-- Library Tab -->
+    <sys:String x:Key="Library_DefaultCategory" xmlns:sys="clr-namespace:System;assembly=mscorlib">التصنيف الافتراضي:</sys:String>
+    <sys:String x:Key="Library_WatchedFolders" xmlns:sys="clr-namespace:System;assembly=mscorlib">المجلدات المراقبة</sys:String>
+    <sys:String x:Key="Library_Browse" xmlns:sys="clr-namespace:System;assembly=mscorlib">تصفح</sys:String>
+    <sys:String x:Key="Library_Add" xmlns:sys="clr-namespace:System;assembly=mscorlib">إضافة</sys:String>
+    <sys:String x:Key="Library_OpenSelected" xmlns:sys="clr-namespace:System;assembly=mscorlib">فتح المحدد</sys:String>
+    <sys:String x:Key="Library_CopyPath" xmlns:sys="clr-namespace:System;assembly=mscorlib">نسخ المسار</sys:String>
+    <sys:String x:Key="Library_Remove" xmlns:sys="clr-namespace:System;assembly=mscorlib">إزالة</sys:String>
+    <sys:String x:Key="Library_ScanNow" xmlns:sys="clr-namespace:System;assembly=mscorlib">فحص الآن</sys:String>
+    <sys:String x:Key="Library_ClearAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">مسح الكل</sys:String>
+
+    <!-- Appearance Tab -->
+    <sys:String x:Key="Appearance_Theme" xmlns:sys="clr-namespace:System;assembly=mscorlib">السمة:</sys:String>
+    <sys:String x:Key="Appearance_StartView" xmlns:sys="clr-namespace:System;assembly=mscorlib">عرض البداية:</sys:String>
+    <sys:String x:Key="Appearance_MinimizeToTray" xmlns:sys="clr-namespace:System;assembly=mscorlib">تصغير إلى علبة النظام عند الإغلاق</sys:String>
+    <sys:String x:Key="Appearance_CloseButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">زر الإغلاق:</sys:String>
+    <sys:String x:Key="Appearance_Language" xmlns:sys="clr-namespace:System;assembly=mscorlib">اللغة:</sys:String>
+
+    <!-- Appearance Theme Options -->
+    <sys:String x:Key="ThemeOption_Dark" xmlns:sys="clr-namespace:System;assembly=mscorlib">داكن</sys:String>
+    <sys:String x:Key="ThemeOption_Light" xmlns:sys="clr-namespace:System;assembly=mscorlib">فاتح</sys:String>
+    <sys:String x:Key="ThemeOption_System" xmlns:sys="clr-namespace:System;assembly=mscorlib">النظام</sys:String>
+
+    <!-- Appearance Start View Options -->
+    <sys:String x:Key="StartViewOption_Library" xmlns:sys="clr-namespace:System;assembly=mscorlib">المكتبة</sys:String>
+    <sys:String x:Key="StartViewOption_Favorites" xmlns:sys="clr-namespace:System;assembly=mscorlib">المفضلة</sys:String>
+    <sys:String x:Key="StartViewOption_Categories" xmlns:sys="clr-namespace:System;assembly=mscorlib">التصنيفات</sys:String>
+
+    <!-- Appearance Close Button Options -->
+    <sys:String x:Key="CloseBehavior_MinimizeToTray" xmlns:sys="clr-namespace:System;assembly=mscorlib">تصغير إلى العلبة</sys:String>
+    <sys:String x:Key="CloseBehavior_Exit" xmlns:sys="clr-namespace:System;assembly=mscorlib">خروج</sys:String>
+
+    <!-- Advanced Tab -->
+    <sys:String x:Key="Advanced_DataAndLogs" xmlns:sys="clr-namespace:System;assembly=mscorlib">البيانات والسجلات</sys:String>
+    <sys:String x:Key="Advanced_OpenLogs" xmlns:sys="clr-namespace:System;assembly=mscorlib">فتح مجلد السجلات</sys:String>
+    <sys:String x:Key="Advanced_ClearCache" xmlns:sys="clr-namespace:System;assembly=mscorlib">مسح ذاكرة التخزين المؤقت</sys:String>
+    <sys:String x:Key="Advanced_DataFolder" xmlns:sys="clr-namespace:System;assembly=mscorlib">فتح مجلد البيانات</sys:String>
+    <sys:String x:Key="Advanced_Maintenance" xmlns:sys="clr-namespace:System;assembly=mscorlib">الصيانة</sys:String>
+    <sys:String x:Key="Advanced_ResetWarning" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة ضبط جميع الإعدادات إلى الوضع الافتراضي. لا يمكن التراجع عن هذا.</sys:String>
+    <sys:String x:Key="Advanced_ResetButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة ضبط الإعدادات</sys:String>
+    <sys:String x:Key="Advanced_ExportLibrary" xmlns:sys="clr-namespace:System;assembly=mscorlib">تصدير المكتبة كـ JSON</sys:String>
+    <sys:String x:Key="Advanced_ExportButton" xmlns:sys="clr-namespace:System;assembly=mscorlib">تصدير</sys:String>
+
+    <!-- About Tab -->
+    <sys:String x:Key="About_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">EchoDeck</sys:String>
+    <sys:String x:Key="About_Subtitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">لوحة الصوتيات الأصلية لويندوز</sys:String>
+    <sys:String x:Key="About_Version" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإصدار: 1.0.0</sys:String>
+    <sys:String x:Key="About_Target" xmlns:sys="clr-namespace:System;assembly=mscorlib">الهدف: ويندوز 10 / ويندوز 11</sys:String>
+    <sys:String x:Key="About_Framework" xmlns:sys="clr-namespace:System;assembly=mscorlib">الإطار: .NET 10 + WPF</sys:String>
+    <sys:String x:Key="About_Audio" xmlns:sys="clr-namespace:System;assembly=mscorlib">الصوتيات: NAudio</sys:String>
+    <sys:String x:Key="About_Storage" xmlns:sys="clr-namespace:System;assembly=mscorlib">التخزين: JSON</sys:String>
+    <sys:String x:Key="About_Desc1" xmlns:sys="clr-namespace:System;assembly=mscorlib">EchoDeck هي لوحة صوتية لويندوز سريعة ومستقرة ومركزة.</sys:String>
+    <sys:String x:Key="About_Desc2" xmlns:sys="clr-namespace:System;assembly=mscorlib">محسّنة لمستخدمي Voicemeeter.</sys:String>
+    <sys:String x:Key="About_Desc3" xmlns:sys="clr-namespace:System;assembly=mscorlib">وضع الصوت القياسي متاح للمستخدمين بدون Voicemeeter.</sys:String>
+
+    <!-- First Run Dialog -->
+    <sys:String x:Key="FirstRun_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">مرحباً بك في EchoDeck</sys:String>
+    <sys:String x:Key="FirstRun_Detecting" xmlns:sys="clr-namespace:System;assembly=mscorlib">جارٍ الكشف عن أجهزة الصوت...</sys:String>
+    <sys:String x:Key="FirstRun_PleaseWait" xmlns:sys="clr-namespace:System;assembly=mscorlib">يرجى الانتظار...</sys:String>
+    <sys:String x:Key="FirstRun_OutputDevice" xmlns:sys="clr-namespace:System;assembly=mscorlib">جهاز الإخراج:</sys:String>
+    <sys:String x:Key="FirstRun_Microphone" xmlns:sys="clr-namespace:System;assembly=mscorlib">الميكروفون:</sys:String>
+    <sys:String x:Key="FirstRun_VMHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">يمكنك تثبيت Voicemeeter لاحقاً وتبديل الأوضاع من الإعدادات.</sys:String>
+    <sys:String x:Key="FirstRun_ChangeOutput" xmlns:sys="clr-namespace:System;assembly=mscorlib">تغيير الإخراج</sys:String>
+    <sys:String x:Key="FirstRun_Continue" xmlns:sys="clr-namespace:System;assembly=mscorlib">متابعة</sys:String>
+
+    <!-- Category Manage Dialog -->
+    <sys:String x:Key="Category_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">إدارة التصنيفات</sys:String>
+    <sys:String x:Key="Category_Header" xmlns:sys="clr-namespace:System;assembly=mscorlib">إدارة التصنيفات</sys:String>
+    <sys:String x:Key="Category_Add" xmlns:sys="clr-namespace:System;assembly=mscorlib">إضافة</sys:String>
+    <sys:String x:Key="Category_Rename" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة تسمية</sys:String>
+    <sys:String x:Key="Category_MoveUp" xmlns:sys="clr-namespace:System;assembly=mscorlib">تحريك لأعلى</sys:String>
+    <sys:String x:Key="Category_MoveDown" xmlns:sys="clr-namespace:System;assembly=mscorlib">تحريك لأسفل</sys:String>
+    <sys:String x:Key="Category_Delete" xmlns:sys="clr-namespace:System;assembly=mscorlib">حذف</sys:String>
+    <sys:String x:Key="Category_Close" xmlns:sys="clr-namespace:System;assembly=mscorlib">إغلاق</sys:String>
+
+    <!-- Input Dialog -->
+    <sys:String x:Key="Input_OK" xmlns:sys="clr-namespace:System;assembly=mscorlib">موافق</sys:String>
+    <sys:String x:Key="Input_Cancel" xmlns:sys="clr-namespace:System;assembly=mscorlib">إلغاء</sys:String>
+
+    <!-- Assign Hotkey Dialog -->
+    <sys:String x:Key="AssignHotkey_Title" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعيين اختصار</sys:String>
+    <sys:String x:Key="AssignHotkey_Prompt" xmlns:sys="clr-namespace:System;assembly=mscorlib">اضغط مجموعة مفاتيح لهذا الصوت...</sys:String>
+    <sys:String x:Key="AssignHotkey_Supported" xmlns:sys="clr-namespace:System;assembly=mscorlib">المدعوم: F1-F24، Ctrl، Alt، Shift + مفتاح</sys:String>
+
+    <!-- Global / Misc UI -->
+    <sys:String x:Key="Status_Ready" xmlns:sys="clr-namespace:System;assembly=mscorlib">جاهز</sys:String>
+    <sys:String x:Key="Status_NothingSelected" xmlns:sys="clr-namespace:System;assembly=mscorlib">لم يتم تحديد شيء</sys:String>
+    <sys:String x:Key="Status_Selected" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم التحديد: {0}</sys:String>
+    <sys:String x:Key="Status_Imported" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم استيراد {0} صوت(أصوات)</sys:String>
+    <sys:String x:Key="Status_ImportedWithSkips" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم استيراد {0} صوت(أصوات)، تخطي {1} مكرر(مكررات)</sys:String>
+    <sys:String x:Key="Status_Removed" xmlns:sys="clr-namespace:System;assembly=mscorlib">تمت إزالة الصوت من المكتبة</sys:String>
+    <sys:String x:Key="Status_ChooseToPlay" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختر صوتاً للتشغيل</sys:String>
+    <sys:String x:Key="Status_ChooseToPreview" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختر صوتاً للمعاينة</sys:String>
+    <sys:String x:Key="Status_ShowingAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">عرض جميع الأصوات</sys:String>
+    <sys:String x:Key="Status_ShowingFavorites" xmlns:sys="clr-namespace:System;assembly=mscorlib">عرض المفضلة</sys:String>
+    <sys:String x:Key="Status_ShowingCategory" xmlns:sys="clr-namespace:System;assembly=mscorlib">عرض التصنيف: {0}</sys:String>
+    <sys:String x:Key="Status_MarkedFavorite" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم وضع علامة مفضلة: {0}</sys:String>
+    <sys:String x:Key="Status_RemovedFavorite" xmlns:sys="clr-namespace:System;assembly=mscorlib">تمت إزالة المفضلة: {0}</sys:String>
+    <sys:String x:Key="Status_HotkeyAssigned" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم تعيين الاختصار {0} إلى {1}</sys:String>
+    <sys:String x:Key="Status_HotkeyFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعذر تسجيل الاختصار {0} (تعارض أو غير صالح)</sys:String>
+    <sys:String x:Key="Status_FileNotFound" xmlns:sys="clr-namespace:System;assembly=mscorlib">الملف غير موجود على القرص</sys:String>
+    <sys:String x:Key="Status_SettingsSaved" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم حفظ الإعدادات | الوضع: {0}</sys:String>
+
+    <!-- Library Status Text -->
+    <sys:String x:Key="LibraryStatus_Format" xmlns:sys="clr-namespace:System;assembly=mscorlib">{0} صوت · {1} مفضلة · {2}</sys:String>
+
+    <!-- Additional Hotkey Strings -->
+    <sys:String x:Key="Hotkey_ConflictLabel" xmlns:sys="clr-namespace:System;assembly=mscorlib">التعارض:</sys:String>
+    <sys:String x:Key="Hotkey_ConflictWarn" xmlns:sys="clr-namespace:System;assembly=mscorlib">تحذير</sys:String>
+    <sys:String x:Key="Hotkey_ConflictOverride" xmlns:sys="clr-namespace:System;assembly=mscorlib">تجاوز</sys:String>
+    <sys:String x:Key="Hotkey_ConflictDisable" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعطيل المكرر</sys:String>
+    <sys:String x:Key="Hotkey_PerSoundHeader" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختصارات الأصوات</sys:String>
+    <sys:String x:Key="Hotkey_RemoveSelected" xmlns:sys="clr-namespace:System;assembly=mscorlib">إزالة المحدد</sys:String>
+    <sys:String x:Key="Hotkey_ClearAll" xmlns:sys="clr-namespace:System;assembly=mscorlib">مسح الكل</sys:String>
+    <sys:String x:Key="Hotkey_CountStatus" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم تعيين {0} اختصار</sys:String>
+
+    <!-- Hotkey Dialog / Status -->
+    <sys:String x:Key="Hotkey_Valid" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختصار إيقاف الكل جاهز.</sys:String>
+    <sys:String x:Key="Hotkey_Invalid" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختصار إيقاف الكل غير صالح. سيتم الاحتفاظ بالاختصار السابق الصحيح.</sys:String>
+    <sys:String x:Key="Hotkey_Conflict" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختصار إيقاف الكل يتعارض مع اختصار صوت. اختر مفتاحاً آخر.</sys:String>
+    <sys:String x:Key="Hotkey_SetTo" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم تعيين اختصار إيقاف الكل إلى {0}.</sys:String>
+    <sys:String x:Key="Hotkey_PressKey" xmlns:sys="clr-namespace:System;assembly=mscorlib">اضغط مفتاحاً لإيقاف الكل...</sys:String>
+
+    <!-- Watched Folders -->
+    <sys:String x:Key="WF_Selected" xmlns:sys="clr-namespace:System;assembly=mscorlib">المجلد المراقب المحدد: {0}</sys:String>
+    <sys:String x:Key="WF_SelectToRemove" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختر مجلداً مراقباً لإزالته.</sys:String>
+    <sys:String x:Key="WF_AlreadyEmpty" xmlns:sys="clr-namespace:System;assembly=mscorlib">المجلدات المراقبة فارغة بالفعل.</sys:String>
+    <sys:String x:Key="WF_SelectToOpen" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختر مجلداً مراقباً لفتحه.</sys:String>
+    <sys:String x:Key="WF_NoLongerExists" xmlns:sys="clr-namespace:System;assembly=mscorlib">المجلد المراقب المحدد لم يعد موجوداً.</sys:String>
+    <sys:String x:Key="WF_Opened" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم فتح المجلد المراقب: {0}</sys:String>
+    <sys:String x:Key="WF_OpenFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعذر فتح المجلد المراقب المحدد.</sys:String>
+    <sys:String x:Key="WF_SelectToCopy" xmlns:sys="clr-namespace:System;assembly=mscorlib">اختر مجلداً مراقباً لنسخه.</sys:String>
+    <sys:String x:Key="WF_Copied" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم نسخ مسار المجلد المراقب: {0}</sys:String>
+    <sys:String x:Key="WF_CopyFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعذر نسخ مسار المجلد المراقب المحدد.</sys:String>
+    <sys:String x:Key="WF_OpenedLogs" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم فتح مجلد السجلات: {0}</sys:String>
+    <sys:String x:Key="WF_OpenLogsFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعذر فتح مجلد السجلات.</sys:String>
+    <sys:String x:Key="WF_CacheCleared" xmlns:sys="clr-namespace:System;assembly=mscorlib">تم مسح ذاكرة التخزين المؤقت للصوت.</sys:String>
+    <sys:String x:Key="WF_CacheClearFailed" xmlns:sys="clr-namespace:System;assembly=mscorlib">تعذر مسح ذاكرة التخزين المؤقت للصوت.</sys:String>
+    <sys:String x:Key="WF_DefaultPathHint" xmlns:sys="clr-namespace:System;assembly=mscorlib">أدخل مسار مجلد للمراقبة</sys:String>
+
+    <!-- Reset Settings -->
+    <sys:String x:Key="Reset_ConfirmTitle" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة ضبط الإعدادات</sys:String>
+    <sys:String x:Key="Reset_ConfirmMessage" xmlns:sys="clr-namespace:System;assembly=mscorlib">إعادة ضبط جميع الإعدادات إلى الوضع الافتراضي؟ سيتم استبدال ملف الإعدادات الحالي.</sys:String>
+    <sys:String x:Key="Reset_Success" xmlns:sys="clr-namespace:System;assembly=mscorlib">تمت إعادة ضبط الإعدادات إلى الوضع الافتراضي.</sys:String>
+
+
+</ResourceDictionary>
