@@ -16,6 +16,8 @@ public sealed class AppSettings
     public bool VirtualMicEnabled { get; set; }
     public string? SelectedInputDeviceId { get; set; }
     public double VirtualMicVolume { get; set; } = 0.85;
+    public double MonitorVolume { get; set; } = 1.0;
+    public double OutputVolume { get; set; } = 1.0;
     public bool AutoReconnectVoicemeeter { get; set; } = true;
     public string DefaultCategoryId { get; set; } = "Uncategorized";
     public string? SelectedWatchedFolder { get; set; }

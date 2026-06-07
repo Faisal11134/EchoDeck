@@ -221,6 +221,10 @@ public partial class App : System.Windows.Application
                         await settingsService.SaveAsync();
                     }
                 }
+
+                await voicemeeterService.ConnectAsync();
+                voicemeeterService.SetMonitorVolume(settingsService.Current.MonitorVolume);
+                voicemeeterService.SetOutputVolume(settingsService.Current.OutputVolume);
             }
 
             if (settingsService.IsFirstRun)

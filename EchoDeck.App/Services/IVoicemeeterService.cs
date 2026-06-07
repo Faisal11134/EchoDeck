@@ -12,4 +12,6 @@ public interface IVoicemeeterService
     Task DisconnectAsync();
     Task<bool> ReconnectAsync();
     AudioDeviceInfo? GetPreferredOutput(AppSettings settings);
+    void SetMonitorVolume(double volume);
+    void SetOutputVolume(double volume);
 }

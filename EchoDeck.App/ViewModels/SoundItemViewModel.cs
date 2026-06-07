@@ -58,7 +58,7 @@ public sealed class SoundItemViewModel : ViewModelBase
     public double Volume
     {
         get => _volume;
-        set => SetProperty(ref _volume, value);
+        set => SetProperty(ref _volume, Math.Clamp(value, 0.0, 2.0));
     }
 
     public bool IsFavorite

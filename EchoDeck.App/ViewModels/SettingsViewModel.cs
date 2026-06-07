@@ -34,6 +34,8 @@ public sealed class SettingsViewModel : ViewModelBase
     private string? _preferredVoicemeeterOutputDeviceId;
     private bool _virtualMicEnabled;
     private double _virtualMicVolume = 0.85;
+    private double _monitorVolume = 1.0;
+    private double _outputVolume = 1.0;
     private bool _autoReconnectVoicemeeter = true;
     private string _defaultCategoryId = "Uncategorized";
     private string _hotkeyStatus = "Stop All hotkey is ready.";
@@ -103,6 +105,30 @@ public sealed class SettingsViewModel : ViewModelBase
     public bool VirtualMicIsRunning => _audioMixerService.IsRunning;
     public string VirtualMicStatusText => _audioMixerService.StatusMessage;
     public string VirtualMicActiveColor => VirtualMicIsRunning ? "#4CAF50" : "#888";
+
+    public double MonitorVolume
+    {
+        get => _monitorVolume;
+        set
+        {
+            if (SetProperty(ref _monitorVolume, value))
+            {
+                _voicemeeterService.SetMonitorVolume(value);
+            }
+        }
+    }
+
+    public double OutputVolume
+    {
+        get => _outputVolume;
+        set
+        {
+            if (SetProperty(ref _outputVolume, value))
+            {
+                _voicemeeterService.SetOutputVolume(value);
+            }
+        }
+    }
 
     public IReadOnlyList<AudioDeviceInfo> InputDevicesList => _audioMixerService.GetInputDevices();
 
@@ -316,6 +342,8 @@ public sealed class SettingsViewModel : ViewModelBase
         _settingsService.Current.SelectedWatchedFolder = SelectedWatchedFolder;
         _settingsService.Current.VirtualMicEnabled = VirtualMicEnabled;
         _settingsService.Current.VirtualMicVolume = VirtualMicVolume;
+        _settingsService.Current.MonitorVolume = MonitorVolume;
+        _settingsService.Current.OutputVolume = OutputVolume;
         _settingsService.Current.SelectedInputDeviceId = SelectedInputDeviceId;
         ValidateHotkeyConfiguration();
         await _settingsService.SaveAsync();
@@ -578,6 +606,8 @@ public sealed class SettingsViewModel : ViewModelBase
         _virtualMicEnabled = current.VirtualMicEnabled;
         _selectedInputDeviceId = current.SelectedInputDeviceId;
         _virtualMicVolume = current.VirtualMicVolume;
+        _monitorVolume = current.MonitorVolume;
+        _outputVolume = current.OutputVolume;
         _audioMixerService.DetectVirtualCable();
         ValidateHotkeyConfiguration();
     }

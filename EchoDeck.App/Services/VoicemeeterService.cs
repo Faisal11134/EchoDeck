@@ -1,5 +1,7 @@
 using NAudio.CoreAudioApi;
 using EchoDeck.App.Models;
+using VoiceMeeter;
+using Voicemeeter;
 
 namespace EchoDeck.App.Services;
 
@@ -8,6 +10,10 @@ public sealed class VoicemeeterService : IVoicemeeterService, IDisposable
     private readonly List<AudioDeviceInfo> _availableOutputs = [];
     private readonly LoggingService _loggingService;
     private System.Threading.Timer? _reconnectTimer;
+    private bool _remoteLoggedIn;
+    private RunVoicemeeterParam _vmEdition = RunVoicemeeterParam.None;
+    private int _vmStripIndex = -1;
+    private bool _hasAttemptedRemoteLogin;
     private bool _disposed;
     private const int InitialRetryMs = 2000;
     private const int NormalRetryMs = 5000;
@@ -52,14 +58,17 @@ public sealed class VoicemeeterService : IVoicemeeterService, IDisposable
         var isDetected = _availableOutputs.Count > 0;
         State = isDetected ? VoicemeeterState.Detected : VoicemeeterState.NotDetected;
 
+        _vmEdition = isDetected
+            ? _availableOutputs.Any(device => device.Name.Contains("Potato", StringComparison.OrdinalIgnoreCase))
+                ? RunVoicemeeterParam.VoicemeeterPotato
+                : _availableOutputs.Any(device => device.Name.Contains("Banana", StringComparison.OrdinalIgnoreCase))
+                    ? RunVoicemeeterParam.VoicemeeterBanana
+                    : RunVoicemeeterParam.Voicemeeter
+            : RunVoicemeeterParam.None;
+
         return Task.FromResult(new VoicemeeterDetectionResult
         {
             IsDetected = isDetected,
-            Edition = _availableOutputs.Any(device => device.Name.Contains("Potato", StringComparison.OrdinalIgnoreCase))
-                ? "Potato"
-                : _availableOutputs.Any(device => device.Name.Contains("Banana", StringComparison.OrdinalIgnoreCase))
-                    ? "Banana"
-                    : isDetected ? "Standard" : null,
             Outputs = _availableOutputs.ToList(),
             Message = isDetected
                 ? $"Voicemeeter detected: {string.Join(", ", _availableOutputs.Select(device => device.Name))}"
@@ -75,6 +84,7 @@ public sealed class VoicemeeterService : IVoicemeeterService, IDisposable
             State = VoicemeeterState.Connected;
             await _loggingService.LogVoicemeeter($"Voicemeeter connected. Edition: {result.Edition}");
             StopReconnect();
+            await LoginToRemoteApi();
             return true;
         }
 
@@ -87,6 +97,7 @@ public sealed class VoicemeeterService : IVoicemeeterService, IDisposable
     {
         State = VoicemeeterState.Disconnected;
         StopReconnect();
+        LogoutFromRemoteApi();
         return Task.CompletedTask;
     }
 
@@ -101,6 +112,7 @@ public sealed class VoicemeeterService : IVoicemeeterService, IDisposable
             State = VoicemeeterState.Connected;
             await _loggingService.LogVoicemeeter($"Voicemeeter reconnected. Edition: {result.Edition}");
             StopReconnect();
+            await LoginToRemoteApi();
             return true;
         }
 
@@ -118,6 +130,120 @@ public sealed class VoicemeeterService : IVoicemeeterService, IDisposable
 
         return _availableOutputs.FirstOrDefault()
             ?? _availableOutputs.FirstOrDefault();
+    }
+
+    public void SetMonitorVolume(double volume)
+    {
+        if (!_remoteLoggedIn || _vmStripIndex < 0) return;
+        try
+        {
+            Remote.SetParameter($"Strip[{_vmStripIndex}].A1", (float)Math.Clamp(volume, 0.0, 1.0));
+        }
+        catch
+        {
+        }
+    }
+
+    public void SetOutputVolume(double volume)
+    {
+        if (!_remoteLoggedIn || _vmStripIndex < 0) return;
+        try
+        {
+            Remote.SetParameter($"Strip[{_vmStripIndex}].B1", (float)Math.Clamp(volume, 0.0, 1.0));
+        }
+        catch
+        {
+        }
+    }
+
+    private async Task LoginToRemoteApi()
+    {
+        if (_hasAttemptedRemoteLogin) return;
+        _hasAttemptedRemoteLogin = true;
+
+        try
+        {
+            Remote.Start(_vmEdition);
+            var loggedIn = await Remote.Login(_vmEdition, retry: true);
+            if (loggedIn)
+            {
+                _remoteLoggedIn = true;
+                _vmStripIndex = FindEchoDeckStripIndex();
+                await _loggingService.LogVoicemeeter($"Voicemeeter Remote API logged in. EchoDeck strip index: {_vmStripIndex}");
+            }
+            else
+            {
+                await _loggingService.LogVoicemeeter("Voicemeeter Remote API login failed");
+                _vmStripIndex = -1;
+            }
+        }
+        catch (Exception ex)
+        {
+            await _loggingService.LogVoicemeeter($"Voicemeeter Remote API login failed: {ex.Message}");
+            _vmStripIndex = -1;
+        }
+    }
+
+    private void LogoutFromRemoteApi()
+    {
+        try
+        {
+            Remote.Shutdown();
+        }
+        catch
+        {
+        }
+        _remoteLoggedIn = false;
+        _vmStripIndex = -1;
+        _hasAttemptedRemoteLogin = false;
+    }
+
+    private int FindEchoDeckStripIndex()
+    {
+        if (!_remoteLoggedIn) return -1;
+
+        var stripCount = _vmEdition == RunVoicemeeterParam.VoicemeeterPotato ? 8
+            : _vmEdition == RunVoicemeeterParam.VoicemeeterBanana ? 6 : 4;
+        var firstVirtual = _vmEdition == RunVoicemeeterParam.VoicemeeterPotato ? 5
+            : _vmEdition == RunVoicemeeterParam.VoicemeeterBanana ? 4 : 3;
+
+        try
+        {
+            var preferredName = GetPreferredOutputDeviceFriendlyName();
+            for (int i = firstVirtual; i < stripCount; i++)
+            {
+                try
+                {
+                    var label = Remote.GetTextParameter($"Strip[{i}].Label");
+                    if (!string.IsNullOrWhiteSpace(label) && preferredName.Contains(label, StringComparison.OrdinalIgnoreCase))
+                    {
+                        return i;
+                    }
+                }
+                catch
+                {
+                }
+            }
+        }
+        catch
+        {
+        }
+
+        return firstVirtual;
+    }
+
+    private string GetPreferredOutputDeviceFriendlyName()
+    {
+        try
+        {
+            using var enumerator = new MMDeviceEnumerator();
+            var defaultEndpoint = enumerator.GetDefaultAudioEndpoint(DataFlow.Render, Role.Multimedia);
+            return defaultEndpoint.FriendlyName;
+        }
+        catch
+        {
+            return string.Empty;
+        }
     }
 
     private void StartReconnect(int delayMs)
@@ -152,5 +278,6 @@ public sealed class VoicemeeterService : IVoicemeeterService, IDisposable
         if (_disposed) return;
         _disposed = true;
         StopReconnect();
+        LogoutFromRemoteApi();
     }
 }
