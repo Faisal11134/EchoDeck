@@ -98,7 +98,12 @@ In Windows **Sound Settings**, set **VoiceMeeter Input** (or **Voicemeeter Aux I
 
 ### Screenshots
 
-*(Add screenshots here showing the Voicemeeter setup, such as the B1 routing and preferred output selection.)*
+Add images to the `screenshots/` folder and reference them like this:
+
+```markdown
+![Voicemeeter B1 Routing](screenshots/voicemeeter-b1-routing.png)
+![EchoDeck Preferred Output](screenshots/echodeck-preferred-output.png)
+```
 
 ## Project Structure
 
