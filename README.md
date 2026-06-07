@@ -98,12 +98,13 @@ In Windows **Sound Settings**, set **VoiceMeeter Input** (or **Voicemeeter Aux I
 
 ### Screenshots
 
-Add images to the `screenshots/` folder and reference them like this:
-
-```markdown
 ![Voicemeeter B1 Routing](screenshots/voicemeeter-b1-routing.png)
-![EchoDeck Preferred Output](screenshots/echodeck-preferred-output.png)
-```
+
+*Enable the B1 send button on your microphone strip in Voicemeeter.*
+
+![EchoDeck Preferred Output](screenshots/echodeck-settings-output.png)
+
+*Select your preferred output in EchoDeck's Voicemeeter tab.*
 
 ## Project Structure
 
